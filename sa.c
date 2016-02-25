@@ -5,19 +5,6 @@
 
 #include "sa.h"
 
-/*
-typedef struct{	
-	void *(*generate_solution)();
-	void *(*modifier)(void *);
-	double (*evaluator)(void *);
-	
-	int iterator;
-	double temperature;
-	double result;
-	void *solution;
-} simulated_annaeling_struct;
-*/
-
 void simulated_annaeling_algorithm(simulated_annaeling_struct *sa){
 	srand(time(0));
 	
@@ -64,7 +51,6 @@ void simulated_annaeling_algorithm(simulated_annaeling_struct *sa){
 			sa->result = sa->evaluator(sa->solution);
 			sa->temperature = init_temperature;
 		}
-		
 		
 		sa->temperature *= 0.9;
 	}
