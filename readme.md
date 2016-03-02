@@ -1,6 +1,6 @@
-# Simulated Annaeling
+# Simulated Annealing
 
-## what is Simulated Annaeling
+## what is Simulated Annealing
 
 Simulated annealing is a probabilictic method proposed in Kirkpatrick, Gelett
 and Vecchi (1983) and Cerni (1985) for finding the global minimum of a cost
