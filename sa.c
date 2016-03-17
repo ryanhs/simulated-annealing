@@ -52,7 +52,7 @@ void simulated_annaeling_algorithm(simulated_annaeling_struct *sa){
 			sa->temperature = init_temperature;
 		}
 		
-		sa->temperature *= 0.9;
+		sa->temperature *= 0.99; // better about .99 or .999
 	}
 	
 }

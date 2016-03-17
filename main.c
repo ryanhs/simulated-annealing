@@ -69,8 +69,8 @@ double evaluator(void *solution){
 // make a better output :-)
 void *output_current_result(int iterator, double temperature, void *solution, double result){
 	fflush(stdout);
-	printf("#%d temp: %.2fᵒ solution: %s (%.3f)\r", iterator, temperature, (char *) solution, result); // use \r instead of \n
-	nanosleep((const struct timespec[]){{0, 300 * 100000L}}, NULL);
+	printf("#iter:%d temp: %.2fᵒ solution: %s (%.3f)\r", iterator, temperature, (char *) solution, result); // use \r instead of \n
+	nanosleep((const struct timespec[]){{0, 100 * 100000L}}, NULL);
 }
 
 /*
@@ -85,6 +85,9 @@ int main(){
 	sa.output_current_result = output_current_result;
 	sa.temperature = 1000;
 	
+
+	printf("# Simulated Annealing\n");
+	printf("# GOAL: %s\n\n", target);
 	simulated_annaeling_algorithm(&sa);
 
 
