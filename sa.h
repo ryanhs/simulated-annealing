@@ -5,6 +5,7 @@ typedef struct{
 	void *(*generate_solution)();
 	void *(*modifier)(void *);
 	double (*evaluator)(void *);
+	void *(*output_current_result)(int iterator, double temperature, void *solution, double result);
 	
 	int iterator;
 	double temperature;

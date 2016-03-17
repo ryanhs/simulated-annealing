@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <math.h>
 #include <malloc.h>
 #include <string.h>
@@ -27,7 +26,7 @@ void simulated_annaeling_algorithm(simulated_annaeling_struct *sa){
 			free(sa->solution);
 			sa->solution = new_solution;
 			sa->result = new_result;
-			printf("#%d temp: %.2fᵒ solution: %s (%.3f)\n", sa->iterator, sa->temperature, (char *) sa->solution, sa->result);
+			sa->output_current_result(sa->iterator, sa->temperature, sa->solution, sa->result);
 		}else{
 			double d = new_result - sa->result;
 			int e = floor(log2(-d/sa->temperature)) + 1;
@@ -43,6 +42,7 @@ void simulated_annaeling_algorithm(simulated_annaeling_struct *sa){
 				free(new_solution);
 			}
 			*/
+			sa->output_current_result(sa->iterator, sa->temperature, sa->solution, sa->result);
 		}
 		
 		if(sa->iterator % 1000 == 0 && sa->result < 0.3){
